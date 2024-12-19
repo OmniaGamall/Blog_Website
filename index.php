@@ -7,7 +7,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Check if the user is logged in
 $user_logged_in = isset($_SESSION['user_id']);
 
 if ($user_logged_in) {
@@ -20,7 +19,6 @@ if ($user_logged_in) {
     $user = $result->fetch_assoc();
 }
 
-// Fetch all blogs
 $result = $conn->query("SELECT blog_id, title, content, user_id, created_at FROM blogs ORDER BY created_at DESC");
 ?>
     <link rel="stylesheet" href="css/index.css">
