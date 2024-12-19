@@ -12,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    // Debugging output
     echo "<pre>";
     print_r($_GET);
     echo "</pre>";
