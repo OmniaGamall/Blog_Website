@@ -1,0 +1,112 @@
+/* General page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e6f2; /* Soft pink background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #fff; /* White background for the form container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adding soft shadow around the container */
+}
+
+/* Box for the form with shadow */
+.box {
+    padding: 20px;
+    background-color: #fff; /* White background for the inner box */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect for the inner box */
+    margin-bottom: 30px; /* Space at the bottom */
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #ff6eb1; /* Girly pink color for the heading */
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* Form labels */
+label {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input and textarea styles */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 2px solid #f2b5d4; /* Light pink border */
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect on inputs */
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #ff6eb1; /* Girly pink border on focus */
+    outline: none;
+}
+
+/* Submit button styling */
+button {
+    background-color: #ff6eb1; /* Soft pink background */
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ff3a7d; /* Darker pink when hovering */
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Center form and style spacing */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    label, input[type="text"], textarea {
+        font-size: 14px;
+    }
+}

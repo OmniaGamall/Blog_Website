@@ -1,0 +1,22 @@
+header {
+    background-color: #f8cbdb;  
+    padding: 25px;
+    color:#d81b60
+}
+
+nav {
+    text-align: left;
+}
+
+nav a {
+    color: #000000;  
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.6em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #c94274;  
+}

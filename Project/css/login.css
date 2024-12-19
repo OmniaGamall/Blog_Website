@@ -1,0 +1,95 @@
+/* General page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e6f2; /* Soft pink background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centering the form */
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow around the form */
+}
+
+/* Form heading */
+h1 {
+    text-align: center;
+    color: #ff6eb1; /* Girly pink color */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input fields */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #f2b5d4; /* Light pink border */
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for input fields */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff6eb1; /* Girly pink border on focus */
+    outline: none;
+}
+
+/* Submit button styling */
+button {
+    background-color: #ff6eb1; /* Soft pink background */
+    color: white;
+    font-size: 18px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ff3a7d; /* Darker pink when hovering */
+}
+
+/* Error message styling */
+p {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    label, input[type="email"], input[type="password"] {
+        font-size: 14px;
+    }
+}

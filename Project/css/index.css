@@ -1,0 +1,104 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3f9; /* Soft off-white background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Blog Post Styles */
+.blog {
+    background-color: #fff; /* White background for each post */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog:hover {
+    transform: translateY(-5px); /* Lift the post on hover */
+}
+
+.blog h2 {
+    font-size: 28px;
+    color: #ff6eb1; /* Soft pink for the titles */
+    margin-bottom: 15px;
+}
+
+.blog p {
+    font-size: 18px;
+    color: #4a4a4a; /* Dark gray text for the content */
+    line-height: 1.6;
+}
+
+.blog small {
+    display: block;
+    font-size: 14px;
+    color: #b0b0b0; /* Lighter gray for timestamps */
+    margin-top: 10px;
+}
+
+/* Link Styling for Edit and Delete */
+.blog a {
+    color: #ff6eb1; /* Soft pink */
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.blog a:hover {
+    color: #ff3a7d; /* Darker pink on hover */
+}
+
+.blog a:active {
+    color: #ff1a56; /* Bright pink when clicked */
+}
+
+/* Message Styling for User Login/Logout */
+p {
+    font-size: 18px;
+    color: #ff6eb1; /* Soft pink for login/logout text */
+}
+
+p a {
+    color: #ff6eb1;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p a:hover {
+    color: #ff3a7d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        text-align: center;
+    }
+
+    header nav a {
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .blog {
+        margin-bottom: 20px;
+    }
+}
+#mmm{
+    margin-left: 130px;
+}
