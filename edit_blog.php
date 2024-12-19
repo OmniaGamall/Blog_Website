@@ -1,15 +1,14 @@
 <?php
 session_start();
 
-// Include database connection
 include('database.php');
 
-// Enable error reporting
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Check if the user is logged in
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -19,26 +18,24 @@ if (!isset($_SESSION['user_id'])) {
 $postId = $_GET['blog_id'] ?? null;
 
 if ($postId) {
-    // Use mysqli to fetch the post details
+
     $stmt = $conn->prepare("SELECT * FROM blogs WHERE blog_id = ?");
     $stmt->bind_param("i", $postId);  // Bind the postId parameter
     $stmt->execute();
     $result = $stmt->get_result();
     $post = $result->fetch_assoc();
 
-    // Check if the post exists and belongs to the logged-in user
     if ($post && $post['user_id'] == $_SESSION['user_id']) {
-        // If the form is submitted to update the post
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $title = $_POST['title'];
             $content = $_POST['content'];
 
-            // Update the post in the database
             $stmt = $conn->prepare("UPDATE blogs SET title = ?, content = ? WHERE blog_id = ?");
-            $stmt->bind_param("ssi", $title, $content, $postId);  // Bind the parameters
+            $stmt->bind_param("ssi", $title, $content, $postId);  
             $stmt->execute();
 
-            // Redirect after updating
+
             header("Location: index.php");
             exit();
         }
