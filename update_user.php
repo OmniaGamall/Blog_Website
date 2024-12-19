@@ -14,19 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $new_password = $_POST['new_password'];
 
-    // Start updating user data
     if (!empty($new_password)) {
-        // Update username, email, and password if a new password is provided
         $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
         $stmt = $conn->prepare("UPDATE users SET username = ?, email = ?, password = ? WHERE user_id = ?");
         $stmt->bind_param("sssi", $username, $email, $hashed_password, $user_id);
     } else {
-        // Update username and email only
         $stmt = $conn->prepare("UPDATE users SET username = ?, email = ? WHERE user_id = ?");
         $stmt->bind_param("ssi", $username, $email, $user_id);
     }
 
-    // Execute the query and check for success
     if ($stmt->execute()) {
         echo "User data updated successfully.";
     } else {
@@ -34,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Fetch user data for display
 $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
