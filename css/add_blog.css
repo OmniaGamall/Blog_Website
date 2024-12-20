@@ -1,0 +1,143 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3f9;
+    /* Soft off-white background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Form Styling */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    /* Darker shadow on hover */
+}
+
+/* Heading Styling */
+form h1 {
+    font-size: 36px;
+    color: #ff6eb1;
+    /* Soft pink for the heading */
+    text-align: center;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+form h1:hover {
+    color: #ff3a7d;
+    /* Darker pink on hover */
+}
+
+/* Label Styling */
+label {
+    font-size: 18px;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Input and Textarea Styling */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Input and Textarea Focus Styling */
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #ff6eb1;
+    box-shadow: 0 0 10px rgba(255, 110, 177, 0.3);
+    /* Soft pink glow */
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff6eb1;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #ff3a7d;
+    transform: scale(1.05);
+}
+
+/* Button Active Effect */
+button:active {
+    background-color: #ff1a56;
+}
+
+/* Error Message Styling */
+p {
+    color: #ff6eb1;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Smooth Transition for Error Message */
+#error-message {
+    transition: opacity 0.3s ease;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form h1 {
+        font-size: 28px;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
