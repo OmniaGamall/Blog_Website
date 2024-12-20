@@ -1,112 +1,141 @@
-/* General page styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7e6f2; /* Soft pink background */
+    background-color: #f9f3f9;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Main container */
-.container {
-    width: 80%;
-    max-width: 900px;
-    margin: 40px auto;
-    background-color: #fff; /* White background for the form container */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adding soft shadow around the container */
-}
-
-/* Box for the form with shadow */
-.box {
-    padding: 20px;
-    background-color: #fff; /* White background for the inner box */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect for the inner box */
-    margin-bottom: 30px; /* Space at the bottom */
-}
-
-/* Heading */
-h1 {
-    text-align: center;
-    color: #ff6eb1; /* Girly pink color for the heading */
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-/* Form labels */
-label {
-    font-size: 18px;
     color: #333;
-    margin-bottom: 5px;
-    display: block;
 }
 
-/* Input and textarea styles */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 36px;
+    color: #ff6eb1;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #ff3a7d;
+}
+
+label {
+    font-size: 20px;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+label[for="title"] {
+    color: #ff6eb1;
+    font-size: 22px;
+}
+
+label[for="content"] {
+    color: #ff6eb1;
+    font-size: 22px;
+}
+
+label:hover {
+    color: #ff3a7d;
+}
+
 input[type="text"],
 textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0 20px 0;
-    border: 2px solid #f2b5d4; /* Light pink border */
-    border-radius: 5px;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
     font-size: 16px;
     color: #333;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
-/* Focus effect on inputs */
 input[type="text"]:focus,
 textarea:focus {
-    border-color: #ff6eb1; /* Girly pink border on focus */
+    border-color: #ff6eb1;
+    box-shadow: 0 0 10px rgba(255, 110, 177, 0.3);
     outline: none;
 }
 
-/* Submit button styling */
 button {
-    background-color: #ff6eb1; /* Soft pink background */
+    background-color: #ff6eb1;
     color: white;
-    font-size: 18px;
-    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    padding: 14px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
-/* Button hover effect */
 button:hover {
-    background-color: #ff3a7d; /* Darker pink when hovering */
+    background-color: #ff3a7d;
+    transform: scale(1.05);
 }
 
-/* Error message styling */
-.error-message {
-    color: red;
+button:active {
+    background-color: #ff1a56;
+}
+
+p {
+    color: #ff6eb1;
     font-size: 16px;
+    text-align: center;
     margin-top: 10px;
+}
+
+#error-message {
+    transition: opacity 0.3s ease;
+    font-size: 16px;
     text-align: center;
 }
 
-/* Center form and style spacing */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        width: 90%;
+        padding: 0 10px;
     }
 
-    h1 {
+    form {
+        padding: 20px;
+    }
+
+    form h1 {
         font-size: 28px;
     }
 
-    label, input[type="text"], textarea {
+    input[type="text"],
+    textarea {
         font-size: 14px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 16px;
     }
 }
