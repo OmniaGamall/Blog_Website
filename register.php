@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+    <link rel="stylesheet" href="css/register.css">
 
 <form method="POST" action="">
     <h1>Register</h1>
