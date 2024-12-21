@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = $_POST['content'];
     $user_id = $_SESSION['user_id'];
 
+
     $stmt = $conn->prepare("INSERT INTO blogs (title, content, user_id, created_at) VALUES (?, ?, ?, NOW())");
     $stmt->bind_param("ssi", $title, $content, $user_id);
     if ($stmt->execute()) {
@@ -21,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+    <link rel="stylesheet" href="css/add_blog.css">
 
 <form method="POST" action="">
     <h1>Add New Blog</h1>
