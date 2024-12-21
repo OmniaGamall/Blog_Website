@@ -1,49 +1,30 @@
 <?php
-include 'database.php';
 session_start();
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+include 'database.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    echo "<pre>";
-    print_r($_GET);
-    echo "</pre>";
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['blog_id']) && is_numeric($_GET['blog_id'])) {
+    $blog_id = intval($_GET['blog_id']);
+    $user_id = $_SESSION['user_id'];
 
-    if (isset($_GET['blog_id']) && is_numeric($_GET['blog_id'])) {
-        $blog_id = intval($_GET['blog_id']);
-        $user_id = $_SESSION['user_id'];
-
-        echo "Blog ID: $blog_id, User ID: $user_id<br>";
-
-        $stmt = $conn->prepare("DELETE FROM blogs WHERE blog_id = ? AND user_id = ?");
-        if ($stmt) {
-            $stmt->bind_param("ii", $blog_id, $user_id);
-            if ($stmt->execute()) {
-                if ($stmt->affected_rows > 0) {
-                    echo "Blog deleted successfully!";
-                    header("Location: index.php");
-                    exit;
-                } else {
-                    echo "No blog found or permission denied.";
-                }
-            } else {
-                echo "Query execution error: " . $stmt->error;
-            }
-            $stmt->close();
+    $stmt = $conn->prepare("DELETE FROM blogs WHERE blog_id = ? AND user_id = ?");
+    if ($stmt) {
+        $stmt->bind_param("ii", $blog_id, $user_id);
+        if ($stmt->execute() && $stmt->affected_rows > 0) {
+            header("Location: index.php");
+            exit;
         } else {
-            echo "Error preparing query: " . $conn->error;
+            echo "No blog found or permission denied.";
         }
+        $stmt->close();
     } else {
-        echo "Invalid blog ID.";
+        echo "Error preparing query.";
     }
 } else {
-    echo "Invalid request method.";
+    echo "Invalid request or blog ID.";
 }
 ?>
