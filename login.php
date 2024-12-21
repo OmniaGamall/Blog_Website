@@ -3,23 +3,18 @@ include 'database.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("s", $_POST['email']);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+    $user = $stmt->get_result()->fetch_assoc();
 
-    if ($user && password_verify($password, $user['password'])) {
+    if ($user && password_verify($_POST['password'], $user['password'])) {
         $_SESSION['user_id'] = $user['user_id'];
         header("Location: index.php");
         exit;
     } else {
         $error = "Invalid email or password.";
     }
-  
 }
 ?>
 
@@ -32,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <form method="POST" action="">
+    <form method="POST">
         <h1>Login</h1>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
